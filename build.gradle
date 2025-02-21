@@ -1,12 +1,17 @@
 plugins {
-	id 'java'
-	id 'application'
+	id 'war'
+	id 'org.gretty' version'4.1.6'
 }
 
 repositories {
 	mavenCentral()
 }
 
-application {
-	mainClass = 'application.Main'
+dependencies {
+	implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1'
+	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.2'
+}
+
+gretty {
+	contextPath = '/'
 }
